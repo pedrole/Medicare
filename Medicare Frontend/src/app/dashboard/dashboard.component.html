@@ -1,0 +1,79 @@
+<!--Body-->
+
+<div class="card-body text-primary" style="margin-top: 80px;">
+
+
+
+  <!--slider-->
+  <div class="container">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" style="background-color: gainsboro;">
+
+        <div class="carousel-item active" *ngFor="let medicine of medicines;
+        let i = index" [class]="{'active': isActive(i)}">
+        
+        <div class="center-cropped">
+            <img class="d-block center-block"
+            src="{{imageApi}}{{medicine.photo}}"  alt="Image">
+          </div>
+
+
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{medicine.description}}</h5>
+            <p>{{medicine.category}}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+<label style="font-size: 50px;"> Latest Medicines</label>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6" *ngFor="let medicine of lastestMedicnes">
+      <div class="row text-center" style="padding-right: 20px;">
+
+        <img class="d-block center-block" src="{{medicine.photo | image}}" style="height: 500px; width: fit-content;" />
+
+        <button type="button" class="btn btn-primary" (click)="buyNow(medicine)"
+        style="height: fit-content; width:  600px;">
+           Buy Now</button>
+
+      </div>
+
+    </div>
+
+   
+  </div>
+
+</div>
+
+<!--Footer-->
+
+<div class="card-footer bg-transperent border-info">
+  @Copyright 2023 Prepared By: Pedro Leal
+</div>

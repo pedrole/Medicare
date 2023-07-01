@@ -1,0 +1,7 @@
+.max-width {
+    max-width: 200px; /* Adjust the maximum width as needed */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Optional: Truncate long content with an ellipsis */
+    white-space: nowrap; /* Optional: Prevent line breaks within cells */
+  }
+

@@ -1,0 +1,26 @@
+/* .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 100%;
+    
+    
+  } */
+  .col{
+    /* height: 300px !important; */
+  }
+  img{
+    height: 200px !important;
+    width: auto !important;
+    object-fit: contain !important;
+
+  }
+
+  p{
+    overflow: hidden;
+    white-space: nowrap; /* Optional: Prevent line breaks within cells */
+    
+  }
+  

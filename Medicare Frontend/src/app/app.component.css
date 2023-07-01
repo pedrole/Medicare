@@ -1,0 +1,8 @@
+.nav-link{
+    cursor: pointer;;
+}
+
+li.active {
+    background-color: #f0f0f0;
+    /* Add your desired styles for the active navigation item */
+  }

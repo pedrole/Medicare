@@ -1,0 +1,26 @@
+.vertical-line {
+    border-left: 1px solid #000;
+    height: 100px; /* Adjust the height as needed */
+  }
+
+  .card { display:block !important; }
+
+
+  #order-sumary :first-child {
+    /* CSS styles for the first child element */
+    /* For example, font color */
+   /* padding-left: 10px; */
+   
+  }
+
+  #myContainer :nth-child(2) {
+    /* CSS styles for the second child element */
+    /* For example, background color */
+    /* padding-right: 10px; */
+  }
+
+  .center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }

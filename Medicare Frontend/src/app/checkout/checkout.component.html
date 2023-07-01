@@ -1,0 +1,88 @@
+<div class="container">
+
+    <div *ngIf="!order && cart != null">
+        <h1 class="">Your cart</h1>
+
+        <div class="card mb-3">
+            <!-- <img src="{{imageApi}}{{cart.photo}}" class="card-img-top img-fluid" alt="..."> -->
+            <img src="{{imageApi}}{{cart.photo}}" class="
+            "  
+            width = "auto" height = "200px" alt="...">
+            <div class="card-body  d-flex justify-content-between">
+              <h5 class="card-title">{{cart.name}}</h5>
+              <div class=" d-flex flex-column">
+              <span>${{cart.price}}</span>
+              <span>1</span>
+            </div>
+             
+            </div>
+          </div>
+
+        <ul class="list-group mb-3">
+            <li class="list-group-item d-flex  justify-content-between">
+                <span>Total (USD)</span>
+                <strong>{{cart.price}}</strong>
+            </li>
+        </ul>
+        <form (ngSubmit)="onSubmit()">
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Pay Now</button>
+        </form>
+    </div>
+
+    <div *ngIf="!cart">
+        <h1>Your cart is empty</h1>
+
+    </div>
+
+    <div *ngIf="orderSuccess" class="mt-2">
+        <h1>Order Sumary</h1>
+        <div id="order-sumary" class="row pt-2 mx-2">
+
+            <div class="col-6">
+
+                <h4 class="row mb-3">Item Description</h4>
+                <div class="row mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" value="{{order.name}}" readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Category</label>
+                    <input type="text" class="form-control" value="{{order.category}}" readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Quantity</label>
+                    <input type="text" class="form-control" value="{{order.qty}}" readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="text" class="form-control" value="{{order.price}} $" readonly>
+                </div>
+            </div>
+            <div class="col-1"></div>
+
+            <div class="col-5">
+                <div class="row mb-3">
+                    <label class="form-label">Order Date</label>
+                    <input type="text" class="form-control" value="{{order.orderDate  | date: 'dd/MM/yyyy' }}" readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Expected on:</label>
+                    <input type="text" class="form-control" value="{{order.expectedDate  | date: 'dd/MM/yyyy' }}"
+                        readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Payment</label>
+                    <input type="text" class="form-control" value="Online" readonly>
+                </div>
+                <div class="row mb-3">
+                    <label class="form-label">Delivered by</label>
+                    <input type="text" class="form-control" value="{{order.deliveredBy}}" readonly>
+                </div>
+
+            </div>
+            <!-- <button class="w-100 btn btn-primary btn-lg mt-3" type="submit">Thank you for your order</button> -->
+            <a class="w-100 btn btn-primary btn-lg mt-3" routerLink="/dashboard"
+             >Thank you for your order</a>
+        </div>
+    </div>
+</div>

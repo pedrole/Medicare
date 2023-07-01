@@ -1,0 +1,55 @@
+<ul class="nav " style="background-color: #ced4da;">
+  <div class="container-fluid text-light bg-body-secondary
+  d-flex flex-nowrap w-100 justify-content-between align-items-center">
+    <div class="d-flex flex-nowrap align-items-center">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/logo.png" alt="Logo" width="fit-content" height="50"
+          class="d-inline-block align-self-cente align-text-CENTER">
+        Medicare
+      </a>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link " *ngIf="loginService.getUserRole() == ERole.Admin" routerLink="users">List of Users</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" *ngIf="!loginService.isLoggedIn()" routerLink="form">Registration</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" *ngIf="!loginService.isLoggedIn()" routerLink="login">Login</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" *ngIf="loginService.isLoggedIn()" (click)="logout()">Logout</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" *ngIf="loginService.getUserRole() == ERole.Admin" routerLink="medicare">Medicare</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" *ngIf="loginService.getUserRole() == ERole.Admin" routerLink="med-form">Medicine Form</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a *ngIf="loginService.getUserRole() != ERole.Admin" class="nav-link" routerLink="medicine-search">Medicine</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="dashboard">Dashboard</a>
+      </li>
+      <form (ngSubmit)="onSubmit(inputName.value)">
+        <div class="mb-0">
+      
+          <input type="text" #inputName class="form-control" id="searchProduct" placeholder="Search">
+        </div>
+      </form>
+
+    </div>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="checkout"><i class="fa-solid fa-cart-shopping"></i></a>
+    </li>
+  </div>
+
+</ul>
+
+<div class="container mt-5">
+  <router-outlet></router-outlet>
+</div>
