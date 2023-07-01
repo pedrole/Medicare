@@ -17,7 +17,7 @@ I was  hired as the Full Stack Java developer and are asked to develop the web a
 | Spring Security Starter | --- | 
 
 ## Key Features
-[Specification Document](./Specification_Document.pdf)  
+[Specification Document](./capstone.pdf)  
 **Authentication**
 * Administrator can sign in, customers can sign in/ sign up
 * Invalid Login attemps trigger error alert
